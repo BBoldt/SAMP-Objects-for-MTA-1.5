@@ -1,0 +1,407 @@
+<meta>
+	<info author="erorr404,jbeta,Talidan" description="Map editor's main component" edf:definition="editor_main.edf" />
+	
+	<min_mta_version server="1.3.0-9.04584" />
+	
+	<!-- Script to shutdown the running gamemode and maps, because otherwise you get trouble -->
+	<script src="gamemodestopper.lua" type="server" />
+	
+	<include resource="freecam"/>
+	<include resource="move_freecam"/>
+	<include resource="move_cursor"/>
+	<include resource="move_keyboard"/>
+	
+	<!-- SAMP Objects -->
+	<script src="samp037mod.lua" type="client" />
+	<file src="files/15x15RoadInters1.col"/>
+	<file src="files/15x15RoadInters1.dff"/>
+	<file src="files/15x15RoadInters2.col"/>
+	<file src="files/15x15RoadInters2.dff"/>
+	<file src="files/15x62_5Road1.col"/>
+	<file src="files/15x62_5Road1.dff"/>
+	<file src="files/15x125Road1.col"/>
+	<file src="files/15x125Road1.dff"/>
+	<file src="files/beach_sfs.txd"/>
+	<file src="files/cj_casino_prop.txd"/>
+	<file src="files/cs_ebridge.txd"/>
+	<file src="files/Edge62_5x15Grass1.col"/>
+	<file src="files/Edge62_5x15Grass1.dff"/>
+	<file src="files/Edge62_5x62_5Grass1.col"/>
+	<file src="files/Edge62_5x62_5Grass1.dff"/>
+	<file src="files/Edge62_5x62_5Grass2.col"/>
+	<file src="files/Edge62_5x62_5Grass2.dff"/>
+	<file src="files/Edge62_5x125Grass1.col"/>
+	<file src="files/Edge62_5x125Grass1.dff"/>
+	<file src="files/MatRoadInters1.txd"/>
+	<file src="files/Plane62_5x15Conc1.col"/>
+	<file src="files/Plane62_5x15Conc1.dff"/>
+	<file src="files/Plane62_5x15Grass1.col"/>
+	<file src="files/Plane62_5x15Grass1.dff"/>
+	<file src="files/Plane62_5x15Sand1.col"/>
+	<file src="files/Plane62_5x15Sand1.dff"/>
+	<file src="files/Plane62_5x125Conc1.col"/>
+	<file src="files/Plane62_5x125Conc1.dff"/>
+	<file src="files/Plane62_5x125Grass1.col"/>
+	<file src="files/Plane62_5x125Grass1.dff"/>
+	<file src="files/Plane62_5x125Sand1.col"/>
+	<file src="files/Plane62_5x125Sand1.dff"/>
+	<file src="files/Plane125x125Conc1.col"/>
+	<file src="files/Plane125x125Conc1.dff"/>
+	<file src="files/Plane125x125Grass1.col"/>
+	<file src="files/Plane125x125Grass1.dff"/>
+	<file src="files/Plane125x125Sand1.col"/>
+	<file src="files/Plane125x125Sand1.dff"/>
+	<file src="files/MatTubes.txd"/>
+	<file src="files/TubeHalf10m1.col"/>
+	<file src="files/TubeHalf10m1.dff"/>
+	<file src="files/TubeHalf10mJoin1a.col"/>
+	<file src="files/TubeHalf10mJoin1a.dff"/>
+	<file src="files/TubeHalf10mJoin1b.col"/>
+	<file src="files/TubeHalf10mJoin1b.dff"/>
+	<file src="files/TubeSeg10m1.col"/>
+	<file src="files/TubeSeg10m1.dff"/>
+	<file src="files/TubeSeg10m2a.col"/>
+	<file src="files/TubeSeg10m2a.dff"/>
+	<file src="files/TubeSeg10m2b.col"/>
+	<file src="files/TubeSeg10m2b.dff"/>
+	<file src="files/TubeSeg25m1.col"/>
+	<file src="files/TubeSeg25m1.dff"/>
+	<file src="files/Ramp360Degree1.col"/>
+	<file src="files/Ramp360Degree1.dff"/>
+	<file src="files/Ramp360Degree2.col"/>
+	<file src="files/Ramp360Degree2.dff"/>
+	<file src="files/Ramp360Degree3.col"/>
+	<file src="files/Ramp360Degree3.dff"/>
+	<file src="files/RampT1.col"/>
+	<file src="files/RampT1.dff"/>
+	<file src="files/RampT2.col"/>
+	<file src="files/RampT2.dff"/>
+	<file src="files/RampT3.col"/>
+	<file src="files/RampT3.dff"/>
+	<file src="files/RampT4.col"/>
+	<file src="files/RampT4.dff"/>
+	<file src="files/VCWideLoop1.col"/>
+	<file src="files/VCWideLoop1.dff"/>
+	<file src="files/landjump.txd"/>
+	<file src="files/MatRamps.txd"/>
+	<file src="files/MeshRampBig.col"/>
+	<file src="files/MeshRampBig.dff"/>
+	<file src="files/CookieRamp1.txd"/>
+	<file src="files/CookieRamp1.col"/>
+	<file src="files/CookieRamp1.dff"/>
+	<file src="files/SampBigFence1.col"/>
+	<file src="files/SampBigFence1.dff"/>
+	<file src="files/electricgate.txd"/>
+	<file src="files/a51fensin.col"/>
+	<file src="files/a51fensin.dff"/>
+	<file src="files/a51fencing.txd"/>
+	<file src="files/DMCage1.col"/>
+	<file src="files/DMCage1.dff"/>
+	<file src="files/DMCage3.col"/>
+	<file src="files/DMCage3.dff"/>
+	<file src="files/DMCages.txd"/>
+	<file src="files/MatTextures.txd"/>
+	<file src="files/Cage20mx20mx10mv2.col"/>
+	<file src="files/Cage20mx20mx10mv2.dff"/>
+	<file src="files/Hills250x250Grass1.col"/>
+	<file src="files/Hills250x250Grass1.dff"/>
+	<file src="files/des_sw.txd"/>
+	<file src="files/Hill250x250Rocky1.col"/>
+	<file src="files/Hill250x250Rocky1.dff"/>
+	<file src="files/Hill250x250Rocky2.col"/>
+	<file src="files/Hill250x250Rocky2.dff"/>
+	<file src="files/Hill250x250Rocky3.txd"/>
+	<file src="files/Hill250x250Rocky3.col"/>
+	<file src="files/Hill250x250Rocky3.dff"/>
+	<file src="files/IslandBase1.col"/>
+	<file src="files/IslandBase1.dff"/>
+	<file src="files/Volcano.col"/>
+	<file src="files/Volcano.dff"/>
+	<file src="files/Volcano.txd"/>
+	<file src="files/TunnelJoinSection1.dff"/>
+	<file src="files/TunnelJoinSection1.col"/>
+	<file src="files/TunnelJoinSection2.dff"/>
+	<file src="files/TunnelJoinSection2.col"/>
+	<file src="files/TunnelJoinSection3.dff"/>
+	<file src="files/TunnelJoinSection3.col"/>
+	<file src="files/TunnelJoinSection4.dff"/>
+	<file src="files/TunnelJoinSection4.col"/>
+	<file src="files/TunnelSection1.dff"/>
+	<file src="files/TunnelSection1.col"/>
+	<file src="files/TunnelSpiral1.dff"/>
+	<file src="files/TunnelSpiral1.col"/>
+	<file src="files/TunnelSections.txd"/>
+	<file src="files/FunBoxRamp1.dff"/>
+	<file src="files/FunBoxRamp1.col"/>
+	<file src="files/FunBoxRamp2.dff"/>
+	<file src="files/FunBoxRamp2.col"/>
+	<file src="files/FunBoxRamp3.dff"/>
+	<file src="files/FunBoxRamp3.col"/>
+	<file src="files/FunBoxRamp4.dff"/>
+	<file src="files/FunBoxRamp4.col"/>
+	<file src="files/FunBoxTop1.dff"/>
+	<file src="files/FunBoxTop1.col"/>
+	<file src="files/MBridge150m1.col"/>
+	<file src="files/MBridge150m1.dff"/>
+	<file src="files/MBridge150m2.col"/>
+	<file src="files/MBridge150m2.dff"/>
+	<file src="files/MBridge150m3.col"/>
+	<file src="files/MBridge150m3.dff"/>
+	<file src="files/MBridge150m4.col"/>
+	<file src="files/MBridge150m4.dff"/>
+	<file src="files/MBridge75mHalf.col"/>
+	<file src="files/MBridge75mHalf.dff"/>
+	<file src="files/MBridgeRamp1.col"/>
+	<file src="files/MBridgeRamp1.dff"/>
+	<file src="files/MRoad150m.col"/>
+	<file src="files/MRoad150m.dff"/>
+	<file src="files/MRoad40m.col"/>
+	<file src="files/MRoad40m.dff"/>
+	<file src="files/MRoadB45T15DegL.col"/>
+	<file src="files/MRoadB45T15DegL.dff"/>
+	<file src="files/MRoadB45T15DegR.col"/>
+	<file src="files/MRoadB45T15DegR.dff"/>
+	<file src="files/MRoadBend15Deg1.col"/>
+	<file src="files/MRoadBend15Deg1.dff"/>
+	<file src="files/MRoadBend15Deg2.col"/>
+	<file src="files/MRoadBend15Deg2.dff"/>
+	<file src="files/MRoadBend15Deg3.col"/>
+	<file src="files/MRoadBend15Deg3.dff"/>
+	<file src="files/MRoadBend15Deg4.col"/>
+	<file src="files/MRoadBend15Deg4.dff"/>
+	<file src="files/MRoadBend180Deg1.col"/>
+	<file src="files/MRoadBend180Deg1.dff"/>
+	<file src="files/MRoadBend45Deg.col"/>
+	<file src="files/MRoadBend45Deg.dff"/>
+	<file src="files/MRoadBend90Banked1.col"/>
+	<file src="files/MRoadBend90Banked1.dff"/>
+	<file src="files/MRoadBend90Banked2.col"/>
+	<file src="files/MRoadBend90Banked2.dff"/>
+	<file src="files/MRoadHelix1.col"/>
+	<file src="files/MRoadHelix1.dff"/>
+	<file src="files/MRoadHelix1.txd"/>
+	<file src="files/MRoadLoop1.col"/>
+	<file src="files/MRoadLoop1.dff"/>
+	<file src="files/MRoadTwist15DegL.col"/>
+	<file src="files/MRoadTwist15DegL.dff"/>
+	<file src="files/MRoadTwist15DegR.col"/>
+	<file src="files/MRoadTwist15DegR.dff"/>
+	<file src="files/WSBend45Deg1.col"/>
+	<file src="files/WSBend45Deg1.dff"/>
+	<file src="files/WSBend45Deg2.col"/>
+	<file src="files/WSBend45Deg2.dff"/>
+	<file src="files/WSBend45Deg3.col"/>
+	<file src="files/WSBend45Deg3.dff"/>
+	<file src="files/WSBend45Deg4.col"/>
+	<file src="files/WSBend45Deg4.dff"/>
+	<file src="files/WSDown1.col"/>
+	<file src="files/WSDown1.dff"/>
+	<file src="files/WSRoadJoiner1.col"/>
+	<file src="files/WSRoadJoiner1.dff"/>
+	<file src="files/WSRocky1.col"/>
+	<file src="files/WSRocky1.dff"/>
+	<file src="files/WSSections.txd"/>
+	<file src="files/WSStart1.col"/>
+	<file src="files/WSStart1.dff"/>
+	<file src="files/WSStraight1.col"/>
+	<file src="files/WSStraight1.dff"/>
+	<file src="files/WSStraight2.col"/>
+	<file src="files/WSStraight2.dff"/>
+	<file src="files/WSStraight3.col"/>
+	<file src="files/WSStraight3.dff"/>
+	<file src="files/WSStraight4.col"/>
+	<file src="files/WSStraight4.dff"/>
+	<file src="files/WSTubeJoiner1.col"/>
+	<file src="files/WSTubeJoiner1.dff"/>
+	<file src="files/RopeBridge.txd"/>
+	<file src="files/RopeBridgePart1.col"/>
+	<file src="files/RopeBridgePart1.dff"/>
+	<file src="files/RopeBridgePart2.col"/>
+	<file src="files/RopeBridgePart2.dff"/>
+	<file src="files/SAMPLogoBig.col"/>
+	<file src="files/SAMPLogoBig.dff"/>
+	<file src="files/SAMPLogoSmall.col"/>
+	<file src="files/SAMPLogoSmall.dff"/>
+	<file src="files/GlassSphere1.col"/>
+	<file src="files/GlassSphere1.dff"/>
+	<file src="files/WaterUVAnimSphere1.col"/>
+	<file src="files/WaterUVAnimSphere1.dff"/>
+	<file src="files/RTexturesphere.col"/>
+	<file src="files/RTexturesphere.dff"/>
+	<file src="files/UFO.col"/>
+	<file src="files/UFO.dff"/>
+	<file src="files/des_ufoinn.txd"/>
+	<file src="files/HugeBowl1.col"/>
+	<file src="files/HugeBowl1.dff"/>
+	<file src="files/HugeBowl2.col"/>
+	<file src="files/HugeBowl2.dff"/>
+	<file src="files/HugeBowl3.col"/>
+	<file src="files/HugeBowl3.dff"/>
+	<file src="files/HugeBowls.txd"/>
+	<file src="files/FireHoop1.col"/>
+	<file src="files/FireHoop1.dff"/>
+	<file src="files/DanceFloor1.col"/>
+	<file src="files/DanceFloor1.dff"/>
+	<file src="files/DanceFloor2.col"/>
+	<file src="files/DanceFloor2.dff"/>
+	<file src="files/DanceFloors.txd"/>
+	<file src="files/MatArrows.txd"/>
+	<file src="files/MickyTextures.txd"/>
+	<file src="files/ArrowType1.col"/>
+	<file src="files/ArrowType1.dff"/>
+	<file src="files/ArrowType2.col"/>
+	<file src="files/ArrowType2.dff"/>
+	<file src="files/ArrowType3.col"/>
+	<file src="files/ArrowType3.dff"/>
+	
+	<!-- added events -->
+	<script src="client/clientevents.lua" type="client"/>
+	<script src="server/serverevents.lua" type="server"/>
+
+	<!-- global vars -->
+	<script src="server/globals.lua" type="server"/>
+	<script src="client/globals.lua" type="client"/>
+	
+	<!-- utils -->
+	<script src="client/controlinterface.lua" type="client"/>
+	<script src="server/util.lua" type="server" />
+	<script src="server/orderedPairs.lua" type="server"/>
+<!-- 	<script src="run.server.lua" type="server"/>
+	<script src="crun.client.lua" type="client"/> -->
+	<script src="client/matrix.lua" type="client"/>
+	<script src="client/complex.lua" type="client"/>
+
+	<!-- working dimension -->
+	<script src="workingdimension.lua" type="client"/>
+	<export function="getWorkingDimension" type="client"/>
+	<script src="workingdimension.lua" type="server"/>
+	<export function="getWorkingDimension" type="server"/>
+
+	<!-- call interfaces -->
+	<script src="server/interface.lua" type="server"/>
+	<script src="client/interface.lua" type="client"/>
+	
+	<!-- freeroam dependency check -->
+	<script src="server/freeroam.lua" type="server" />
+
+	<!-- clientside element manipulation code -->
+	<script src="client/collisions.lua" type="client"/>
+	<script src="client/gridlines.lua" type="client"/>
+	<script src="client/main.lua" type="client"/>
+	<script src="client/editorelements.lua" type="client"/>
+	<script src="server/createdestroy.lua" type="server"/>
+	<script src="server/import.lua" type="server"/>
+	<script src="server/synchronization.lua" type="server"/>
+	<script src="server/locking.lua" type="server"/>
+	<script src="server/mapsettingssync.lua" type="server"/>
+	<script src="server/definitionssync.lua" type="server"/>
+
+	<!-- ID assignment handling code -->
+	<script src="server/IDhandler.lua" type="server"/>
+	<script src="server/getObjectNameFromModel.lua" type="server"/>
+
+	<!-- EDF interface code -->
+	<script src="client/elementcreation.lua" type="client"/>
+	<script src="server/EDFhandler.lua" type="server"/>
+
+	<!-- controls loading -->
+	<script src="client/controls.lua" type="client"/>
+	
+	<!--player attachment and spawning-->
+	<script src="client/superman.lua" type="client" validate="false"/>
+	<script src="client/attachplayer.lua" type="client" validate="false"/>
+	<script src="server/playerspawn.lua" type="server"/>
+	<script src="server/playerblips.lua" type="server"/>
+	
+	<!-- saving/loading/testing -->
+	<script src="client/saveloadtest_client.lua" type="client"/>
+	<script src="server/resourcehooks.lua" type="server"/>
+	<script src="server/dumpxml.lua" type="server" />
+	<script src="server/saveloadtest_server.lua" type="server"/>
+	<script src="server/save_backup.lua" type="server"/>
+
+	<!-- undo/redo -->
+	<script src="server/undoredo_action.lua" type="server"/>
+	<script src="server/undoredo_main.lua" type="server"/>
+	<script src="server/undoredo_move.lua" type="server"/>
+
+	<!-- World object remover -->
+	<script src="server/removeWorldObject.lua" type="server"/>
+
+	<!-- exported client functions -->
+	<export function="startEditor" type="client"/>
+	<export function="selectElement" type="client"/>
+	<export function="dropElement" type="client"/>
+	<export function="cloneSelectedElement" type="client"/>
+	<export function="destroySelectedElement" type="client"/>
+	<export function="setMode" type="client"/>
+	<export function="setMaxSelectDistance" type="client"/>
+	<export function="getSelectedElement" type="client"/>
+	<export function="getMode" type="client"/>
+	<export function="getSubmode" type="client"/>
+	<export function="getMaxSelectDistance" type="client"/>
+	<export function="showClipboardWindow" type="client"/>
+	<export function="showCrosshair" type="client"/>
+	<export function="getWorkingDimension" type="client"/>
+	<export function="setWorkingDimension" type="client"/>
+	<export function="getWorkingInterior" type="client"/>
+	<export function="setWorkingInterior" type="client"/>
+	<export function="suspend" type="client"/>
+	<export function="resume" type="client"/>
+	<export function="undo" type="server"/>
+	<export function="redo" type="server"/>
+	<export function="getControls" type="client"/>
+	<export function="doCreateElement" type="client"/>
+	<export function="doCloneElement" type="client"/>
+	<export function="setWorldClickEnabled" type="client"/>
+	<export function="toggleEditorKeys" type="client"/>
+	<export function="showCursor" type="client"/>
+	<export function="processCameraLineOfSight" type="client"/>
+	<export function="processCursorLineOfSight" type="client"/>
+	<export function="openResource" type="client"/>
+	<export function="saveResource" type="client"/>
+	<export function="newResource" type="client"/>
+	<export function="isEditorElement" type="client"/>
+	<export function="registerEditorElements" type="client"/>
+	<export function="updateArrowMarker" type="client"/>
+	<export function="setMovementType" type="client"/>
+	<export function="enableMouseOver" type="client"/>
+	<export function="import" type="server"/>
+
+	<export function="createHighlighterText" type="client"/>
+	<export function="setCrosshairState" type="client"/>
+	<export function="setCursorCrosshairState" type="client"/>
+
+	<!-- clientside files -->
+	<file src="client/images/crosshair.png" type="client"/>
+	<file src="client/images/cursor.png" type="client"/>
+
+	<file src="client/images/icons/marker.png" type="client"/>
+	<file src="client/images/icons/object.png" type="client"/>
+	<file src="client/images/icons/vehicle.png" type="client"/>
+	<file src="client/images/icons/pickup.png" type="client"/>
+	<file src="client/images/icons/ped.png" type="client"/>
+	<file src="client/images/icons/wor.png" type="client"/>
+	
+	<settings>
+		<setting name="*admingroup" value="Admin,MapEditor"
+						friendlyname="Admin group list"
+						accept="*"
+						examples="Admin,Moderator,SuperModerator"
+						desc="To change server settings, the player must belong to one of the groups listed."
+						/>
+
+		<setting name="#enableDumpSave" value="true"
+						friendlyname="Enable map backup"
+						accept="true,false"
+						desc="Set to false to disable map backup."
+						/>
+
+		<setting name="#dumpSaveInterval" value="60"
+						friendlyname="Map backup interval"
+						accept="1-3600"
+						desc="Map backup interval in seconds."
+						/>
+	</settings>
+</meta>
+
